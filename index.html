@@ -72,6 +72,29 @@ td .note { display: block; color: var(--muted); font-size: 12px; }
 .s.no { color: var(--no); background: transparent; border: 1px dashed var(--line); }
 .s.na { color: var(--no); opacity: .5; background: transparent; font-weight: 400; }
 .s.unknown { color: var(--no); background: var(--no-bg); }
+tr.section td { background: transparent; font-size: 20px; font-weight: 700; padding: 22px 12px 8px; border-bottom: 1px solid var(--line); }
+tr.group { cursor: pointer; }
+tr.group td { text-transform: none; letter-spacing: 0; font-size: 14px; color: var(--ink); }
+tr.group:hover td { background: var(--line); }
+tr.group .fold { display: inline-block; width: 14px; color: var(--muted); }
+tr.group .cnt { font-weight: 400; font-size: 12px; color: var(--muted); margin-left: 6px; }
+.sum { font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 6px; }
+.sum.done { background: var(--done-bg); color: var(--done); }
+.sum.doing { background: var(--doing-bg); color: var(--doing); }
+.sum.part { background: var(--no-bg); color: var(--ink); }
+.sum.no { color: var(--no); }
+.sum.na { color: var(--no); opacity: .5; font-weight: 400; }
+td.ask { cursor: pointer; position: relative; }
+td.ask:hover .s { outline: 2px solid var(--accent); outline-offset: 1px; }
+i.req { position: absolute; font-style: normal; font-size: 11px; margin: -6px 0 0 -4px; }
+dialog { border: 1px solid var(--line); border-radius: 14px; background: var(--panel); color: var(--ink); padding: 18px 20px; width: min(520px, 94vw); }
+dialog::backdrop { background: rgba(0,0,0,.45); }
+dialog h3 { margin: 0 0 8px; font-size: 17px; }
+dialog .asks { display: grid; gap: 6px; margin: 12px 0; font-size: 14px; }
+dialog textarea { width: 100%; border: 1px solid var(--line); background: var(--bg); color: var(--ink); border-radius: 8px; padding: 8px; font: inherit; font-size: 14px; }
+dialog .btns { display: flex; gap: 8px; justify-content: flex-end; margin-top: 12px; flex-wrap: wrap; }
+.chip.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+.small { font-size: 12px; }
 @keyframes pulse { 50% { opacity: .3; } }
 .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 10px; }
 .card { background: var(--panel); border: 1px solid var(--line); border-left: 4px solid var(--c);
@@ -101,13 +124,18 @@ footer { margin-top: 40px; color: var(--muted); font-size: 13px; }
 <div class="wrap">
   <header>
     <h1>✈ Flightgame: what is in what</h1>
-    <p>Which app has which feature. Click a column to sort.</p>
+    <p>Which app has which feature. Click a column to sort, a category to open it, a cell to ask for something.</p>
   </header>
 
   <div class="apps" id="apps"></div>
 
+  <section id="reqs" hidden>
+    <h2>Open requests <small>asked for on this page, waiting for an agent or one of us</small></h2>
+    <div class="list" id="reqList"></div>
+  </section>
+
   <section id="features">
-    <h2>Features <small>which app has which feature</small></h2>
+    <h2>Features <small>the game, then every aircraft by category</small></h2>
     <div class="legend">
       <span><b class="s done">✓</b> done</span>
       <span><b class="s doing"><span>working</span></b> being worked on</span>
@@ -122,6 +150,7 @@ footer { margin-top: 40px; color: var(--muted); font-size: 13px; }
   <footer>Edit the list in <a href="https://github.com/noname-ch/flightgame-hub/blob/main/board.json"><code>board.json</code></a> and push; the page updates in a minute.</footer>
 </div>
 
+<dialog id="ask"></dialog>
 <script src="app.js"></script>
 </body>
 </html>
