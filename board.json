@@ -1,0 +1,72 @@
+{
+  "_help": "The feature list behind index.html. Each feature has a state per app: done (green), doing (yellow, being worked on), no (not there yet), na (not needed in that app), unknown (not checked). Optional: note, who (e.g. {\"fly\": \"Eric\"}). Keep it valid JSON: python3 -m json.tool board.json >/dev/null",
+  "apps": [
+    {"key": "web", "name": "Web game", "repo": "noname-ch/flightgame", "live": "https://noname-ch.github.io/flightgame/"},
+    {"key": "fly", "name": "Fly", "repo": "noname-ch/flightgame-fly", "live": "https://noname-ch.github.io/flightgame-fly/"},
+    {"key": "rust", "name": "Rust app", "repo": "lianhirter-arch/flightgame-rust", "live": ""}
+  ],
+  "groups": [
+    {
+      "name": "Airline game",
+      "features": [
+        {"name": "World map: 16,000 airports, cities, real runways", "web": "done", "fly": "na", "rust": "done"},
+        {"name": "Market, hangar, buying, leasing, used planes", "web": "done", "fly": "na", "rust": "done"},
+        {"name": "Timetables, slots and the slot market", "web": "done", "fly": "na", "rust": "done"},
+        {"name": "Airport shares, runways, terminals, own airports", "web": "done", "fly": "na", "rust": "done"},
+        {"name": "Story mode (from 1955)", "web": "done", "fly": "na", "rust": "done"},
+        {"name": "Rival airlines", "web": "done", "fly": "na", "rust": "done"},
+        {"name": "Random events, emergencies, crashes (5%)", "web": "done", "fly": "na", "rust": "done"},
+        {"name": "Local time at each airport, day and night", "web": "done", "fly": "done", "rust": "done"},
+        {"name": "Weather, wind, crosswind crab", "web": "done", "fly": "done", "rust": "done"},
+        {"name": "Airport editor (F3)", "web": "done", "fly": "na", "rust": "done"},
+        {"name": "Bug report (F5)", "web": "done", "fly": "na", "rust": "done"},
+        {"name": "Save files shared between web and Rust", "web": "done", "fly": "na", "rust": "done"},
+        {"name": "Multiplayer rooms", "web": "done", "fly": "na", "rust": "done"},
+        {"name": "Loans", "web": "no", "fly": "na", "rust": "no", "note": "ROADMAP"},
+        {"name": "Profit table per route", "web": "no", "fly": "na", "rust": "no", "note": "ROADMAP"}
+      ]
+    },
+    {
+      "name": "3D and looks",
+      "features": [
+        {"name": "3D view of every flight (124+ types)", "web": "done", "fly": "done", "rust": "done"},
+        {"name": "Real terrain", "web": "done", "fly": "done", "rust": "done"},
+        {"name": "Liveries (F7): per plane, designer, community", "web": "done", "fly": "done", "rust": "done"},
+        {"name": "Real airport layouts from OpenStreetMap", "web": "done", "fly": "done", "rust": "done"},
+        {"name": "Water: seas, lakes, rivers", "web": "done", "fly": "done", "rust": "done"},
+        {"name": "Volumetric clouds, weather systems, lightning", "web": "no", "fly": "no", "rust": "done"},
+        {"name": "Approach, runway and PAPI lights from far", "web": "done", "fly": "done", "rust": "no"},
+        {"name": "Moving parts: flaps, control surfaces, reversers, wing bending", "web": "done", "fly": "done", "rust": "done"},
+        {"name": "Spinning props, blurred prop discs", "web": "done", "fly": "done", "rust": "done"},
+        {"name": "A350-2000 / A350-20000", "web": "done", "fly": "na", "rust": "done"}
+      ]
+    },
+    {
+      "name": "Sound",
+      "features": [
+        {"name": "Engine sounds (synth + recorded) and the F6 mixer", "web": "done", "fly": "done", "rust": "done"},
+        {"name": "Cockpit sounds: real GPWS words, callouts, tones, cabin", "web": "na", "fly": "done", "rust": "no", "note": "Rust: callouts as text only"}
+      ]
+    },
+    {
+      "name": "Fly it yourself",
+      "features": [
+        {"name": "Hand flying: 16 types, stalls, trim, limiter (L)", "web": "na", "fly": "done", "rust": "done", "note": "web opens the Fly page (✈ Fly / P)"},
+        {"name": "Start screen: gallery, airport, livery, time, wind", "web": "na", "fly": "done", "rust": "no"},
+        {"name": "A350 3D flight deck", "web": "na", "fly": "done", "rust": "done"},
+        {"name": "A320 deck: clickable overhead, FCU, working systems", "web": "na", "fly": "done", "rust": "done"},
+        {"name": "Autopilot, MCDU, real ND map", "web": "na", "fly": "done", "rust": "done"},
+        {"name": "A330 / A340 decks per version", "web": "na", "fly": "doing", "rust": "no"},
+        {"name": "Cockpit views on Ctrl + arrows", "web": "na", "fly": "done", "rust": "unknown"}
+      ]
+    },
+    {
+      "name": "Crashes",
+      "features": [
+        {"name": "Breakable parts: wingtips, wings, elevators, tumbling", "web": "done", "fly": "done", "rust": "done"},
+        {"name": "Wing strikes, fuselage break-up, fireballs, debris", "web": "done", "fly": "done", "rust": "done"},
+        {"name": "Fire trails, burning pieces, Concorde reheat", "web": "done", "fly": "done", "rust": "done"}
+      ]
+    }
+  ]
+}
