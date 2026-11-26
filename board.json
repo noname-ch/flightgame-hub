@@ -57,7 +57,10 @@
         {"name": "Hand flying: 16 types, stalls, trim, limiter (L)", "web": "na", "fly": "done", "rust": "done", "note": "Web opens the Fly page (✈ Fly / P). Per plane under Aircraft"},
         {"name": "Start screen: gallery, airport, livery, time, wind", "web": "na", "fly": "done", "rust": "no"},
         {"name": "Autopilot, MCDU, real ND map", "web": "na", "fly": "done", "rust": "done"},
-        {"name": "Cockpit views on Ctrl + arrows (captain, middle, first officer, overhead)", "web": "na", "fly": "done", "rust": "unknown"}
+        {"name": "Cockpit views on Ctrl + arrows (captain, middle, first officer, overhead)", "web": "na", "fly": "done", "rust": "done"},
+        {"name": "No bank limit: a steep turn costs g", "web": "na", "fly": "done", "rust": "done"},
+        {"name": "Radios: ATIS, tower calls, transponder, TCAS", "web": "na", "fly": "done", "rust": "done"},
+        {"name": "Panels as modules you can move or copy to other planes", "web": "na", "fly": "done", "rust": "done"}
       ]
     },
     {
