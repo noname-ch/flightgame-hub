@@ -5,7 +5,8 @@
   tools/board.py find a340 buttons            rows whose name matches all the words
   tools/board.py set "A340-300 · Working buttons and systems" rust doing [--who Lian]
   tools/board.py set "Multiplayer rooms" fly na
-  tools/board.py add "Airline game" "Loans" --web no --fly na --rust no [--plane X] [--note "…"]
+  tools/board.py add "Airline game" "Loans" --web no --fly na --rust no [--note "…"]
+  tools/board.py add "A321XLR" "Realistic 3D cockpit" --plane A321XLR --section Aircraft --family "Airbus A320 family" --fly no
 
 `set` and `add` rewrite board.json in its one-feature-per-line layout; commit and push yourself.
 A feature is named as the page shows it: "<plane> · <name>" for aircraft rows, "<name>" otherwise.
@@ -28,7 +29,10 @@ def save(b):
     out += ["    " + d(a) + ("," if i < len(b["apps"]) - 1 else "") for i, a in enumerate(b["apps"])]
     out += ["  ],", '  "groups": [']
     for gi, g in enumerate(b["groups"]):
-        out += ["    {", f'      "name": {d(g["name"])},', f'      "section": {d(g.get("section", "Game"))},', '      "features": [']
+        out += ["    {", f'      "name": {d(g["name"])},', f'      "section": {d(g.get("section", "Game"))},']
+        if g.get("family"):
+            out += [f'      "family": {d(g["family"])},']
+        out += ['      "features": [']
         out += ["        " + d(f) + ("," if i < len(g["features"]) - 1 else "") for i, f in enumerate(g["features"])]
         out += ["      ]", "    }" + ("," if gi < len(b["groups"]) - 1 else "")]
     out += ["  ]", "}"]
@@ -97,7 +101,7 @@ def cmd_add(a):
     b = load()
     g = next((g for g in b["groups"] if g["name"].lower() == a.group.lower()), None)
     if not g:
-        g = {"name": a.group, "section": a.section, "features": []}
+        g = {"name": a.group, "section": a.section, **({"family": a.family} if a.family else {}), "features": []}
         b["groups"].append(g)
     f = ({"plane": a.plane} if a.plane else {}) | {"name": a.name}
     for x in b["apps"]:
@@ -118,6 +122,7 @@ def main():
     t.add_argument("--who"); t.add_argument("--note"); t.set_defaults(fn=cmd_set)
     d = s.add_parser("add"); d.add_argument("group"); d.add_argument("name"); d.add_argument("--plane")
     d.add_argument("--section", default="Game", choices=["Game", "Aircraft"]); d.add_argument("--note")
+    d.add_argument("--family", help="for a new aircraft group: its family, e.g. 'Airbus A330 / A340'")
     for k in ("web", "fly", "rust"):
         d.add_argument("--" + k, choices=STATES)
     d.set_defaults(fn=cmd_add)

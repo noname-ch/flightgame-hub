@@ -32,6 +32,6 @@ When you start or finish a feature in any Flightgame repo, update its row:
     tools/board.py add "Airbus A320 family" "Realistic 3D cockpit" --plane A321XLR --section Aircraft --fly no --rust done --web na
     git commit -am "Board: …" && git push
 
-States: done (green), doing (yellow), no, na (not needed in that app), unknown. Aircraft rows are
-"<plane> · <feature>" in a category group (section Aircraft). Keep names short and plain, as a player would say
+States: done (green), doing (yellow), no, na (not needed in that app), unknown. Every aircraft is its own group
+(section Aircraft, with a `family` such as "Airbus A330 / A340"); its rows are named "<plane> · <feature>". Keep names short and plain, as a player would say
 them. No commit hashes, file paths or private details: the page is public, and the Rust repo is private.

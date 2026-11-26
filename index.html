@@ -73,9 +73,15 @@ td .note { display: block; color: var(--muted); font-size: 12px; }
 .s.na { color: var(--no); opacity: .5; background: transparent; font-weight: 400; }
 .s.unknown { color: var(--no); background: var(--no-bg); }
 tr.section td { background: transparent; font-size: 20px; font-weight: 700; padding: 22px 12px 8px; border-bottom: 1px solid var(--line); }
-tr.group { cursor: pointer; }
+tr.group, tr.family { cursor: pointer; }
+tr.family td { background: var(--no-bg); font-weight: 700; font-size: 15px; }
+tr.family:hover td { background: var(--line); }
+tr.family .cnt { font-weight: 400; font-size: 12px; color: var(--muted); margin-left: 6px; }
+tr.group.plane td { background: var(--panel); font-weight: 600; }
+tr.group.plane td:first-child { padding-left: 30px; }
+td.in-plane { padding-left: 52px; }
 tr.group td { text-transform: none; letter-spacing: 0; font-size: 14px; color: var(--ink); }
-tr.group:hover td { background: var(--line); }
+tr.group:hover td, tr.group.plane:hover td { background: var(--line); }
 tr.group .fold { display: inline-block; width: 14px; color: var(--muted); }
 tr.group .cnt { font-weight: 400; font-size: 12px; color: var(--muted); margin-left: 6px; }
 .sum { font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 6px; }

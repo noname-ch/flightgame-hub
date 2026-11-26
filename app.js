@@ -34,10 +34,11 @@ function start(B, issues) {
   const apps = B.apps;
   const appOf = Object.fromEntries(apps.map(a => [a.key, a]));
   const color = k => `var(--${k})`;
-  const feats = B.groups.flatMap((g, gi) => g.features.map((f, i) => ({ ...f, group: g.name, section: g.section || "Game", order: gi * 1000 + i })));
+  const feats = B.groups.flatMap((g, gi) => g.features.map((f, i) => ({ ...f, group: g.name, family: g.family, section: g.section || "Game", order: gi * 1000 + i })));
   const reqs = (Array.isArray(issues) ? issues : []).filter(i => !i.pull_request).map(parseRequest);
   const reqsFor = (f, a) => reqs.filter(r => r.feature === fullName(f) && r.app === a.key);
-  const open = new Set(B.groups.filter(g => (g.section || "Game") === "Game").map(g => g.name)); // Aircraft folded at first
+  const open = new Set(B.groups.filter(g => (g.section || "Game") === "Game").map(g => g.name)); // aircraft folded at first
+  const openFam = new Set();
 
   // App cards
   $("apps").innerHTML = apps.map(a => {
@@ -83,8 +84,8 @@ function start(B, issues) {
     draw();
   });
   $("q").addEventListener("input", e => { query = e.target.value.toLowerCase().split(/\s+/).filter(Boolean); draw(); });
-  $("openAll").onclick = () => { B.groups.forEach(g => open.add(g.name)); draw(); };
-  $("closeAll").onclick = () => { open.clear(); draw(); };
+  $("openAll").onclick = () => { B.groups.forEach(g => { open.add(g.name); if (g.family) openFam.add(g.family); }); draw(); };
+  $("closeAll").onclick = () => { open.clear(); openFam.clear(); draw(); };
   $("matrix").addEventListener("click", e => {
     const th = e.target.closest("th[data-sort]");
     if (th) {
@@ -92,6 +93,8 @@ function start(B, issues) {
       if (sort.key !== k) sort = { key: k, dir: 1 }; else if (sort.dir === 1) sort.dir = -1; else sort = { key: null, dir: 1 };
       return draw();
     }
+    const fm = e.target.closest("tr[data-family]");
+    if (fm) { const k = fm.dataset.family; openFam.has(k) ? openFam.delete(k) : openFam.add(k); return draw(); }
     const g = e.target.closest("tr[data-group]");
     if (g) { open.has(g.dataset.group) ? open.delete(g.dataset.group) : open.add(g.dataset.group); return draw(); }
     const c = e.target.closest("td[data-i]");
@@ -115,11 +118,11 @@ function start(B, issues) {
     return `<td class="c"><span class="sum ${k}">${done}/${cells.length}</span>${r ? `<i class="req">💬${r > 1 ? r : ""}</i>` : ""}</td>`;
   }
   const arrow = k => sort.key === k ? `<span class="arrow">${sort.dir === 1 ? "▲" : "▼"}</span>` : "";
-  const label = (f, grp) => `<td>${grp ? `<span class="grp">${esc(f.group)}</span>` : ""}${f.plane ? `<b>${esc(f.plane)}</b> · ` : ""}${esc(f.name)}${f.note ? `<span class="note">${esc(f.note)}</span>` : ""}</td>`;
+  const label = (f, grp, inGroup) => `<td class="${inGroup && f.family ? "in-plane" : ""}">${grp ? `<span class="grp">${esc(f.family || f.group)}</span>` : ""}${f.plane && !inGroup ? `<b>${esc(f.plane)}</b> · ` : ""}${esc(f.name)}${f.note ? `<span class="note">${esc(f.note)}</span>` : ""}</td>`;
 
   function draw() {
     const keep = FILTERS.find(x => x[0] === filter)[2];
-    const hay = f => (fullName(f) + " " + (f.note || "") + " " + f.group + " " + f.section).toLowerCase();
+    const hay = f => (fullName(f) + " " + (f.note || "") + " " + f.group + " " + (f.family || "") + " " + f.section).toLowerCase();
     const rows = feats.filter(f => keep(f) && query.every(w => hay(f).includes(w)));
     const narrowed = filter !== "all" || query.length;
     const head = `<thead><tr><th data-sort="name">Feature ${arrow("name")}</th>${apps.map(a => {
@@ -133,19 +136,28 @@ function start(B, issues) {
       body = rows.slice().sort((x, y) => (val(x) < val(y) ? -1 : val(x) > val(y) ? 1 : x.order - y.order) * sort.dir)
         .map(f => `<tr>${label(f, true)}${apps.map(a => cell(f, a)).join("")}</tr>`).join("");
     } else {
-      let section = "";
+      let section = "", family = null;
       for (const g of B.groups) {
         const rs = rows.filter(f => f.group === g.name);
         if (!rs.length) continue;
         if ((g.section || "Game") !== section) {
-          section = g.section || "Game";
+          section = g.section || "Game"; family = null;
           body += `<tr class="section"><td colspan="${span}">${esc(section)}</td></tr>`;
         }
+        // Aircraft: a family heading (folds all its planes), then each plane as its own group.
+        if (g.family && g.family !== family) {
+          family = g.family;
+          const fam = rows.filter(f => f.family === family);
+          const n = new Set(fam.map(f => f.group)).size;
+          const famOpen = narrowed || openFam.has(family);
+          body += `<tr class="family" data-family="${esc(family)}"><td><span class="fold">${famOpen ? "▾" : "▸"}</span> ${esc(family)}
+            <span class="cnt">${n} aircraft</span></td>${apps.map(a => summary(fam, a)).join("")}</tr>`;
+        }
+        if (g.family && !(narrowed || openFam.has(g.family))) continue;
         const isOpen = narrowed || open.has(g.name);
-        const planes = new Set(rs.map(f => f.plane).filter(Boolean)).size;
-        body += `<tr class="group" data-group="${esc(g.name)}"><td><span class="fold">${isOpen ? "▾" : "▸"}</span> ${esc(g.name)}
-          <span class="cnt">${planes ? planes + " aircraft" : rs.length + " features"}</span></td>${apps.map(a => summary(rs, a)).join("")}</tr>`;
-        if (isOpen) body += rs.map(f => `<tr>${label(f, false)}${apps.map(a => cell(f, a)).join("")}</tr>`).join("");
+        body += `<tr class="group${g.family ? " plane" : ""}" data-group="${esc(g.name)}"><td><span class="fold">${isOpen ? "▾" : "▸"}</span> ${esc(g.name)}
+          <span class="cnt">${rs.length} features</span></td>${apps.map(a => summary(rs, a)).join("")}</tr>`;
+        if (isOpen) body += rs.map(f => `<tr>${label(f, false, true)}${apps.map(a => cell(f, a)).join("")}</tr>`).join("");
       }
     }
     $("matrix").innerHTML = head + `<tbody>${body || `<tr><td class="empty" colspan="${span}">Nothing matches.</td></tr>`}</tbody>`;

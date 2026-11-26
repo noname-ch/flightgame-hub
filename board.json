@@ -1,5 +1,5 @@
 {
-  "_help": "The list behind index.html. Groups have a section (Game or Aircraft). Each row: name, optional plane, and a state per app: done (green), doing (yellow, being worked on), no (not there yet), na (not needed in that app), unknown (not checked). Optional: note, who (e.g. {\"fly\": \"Eric\"}). Requests from the page are GitHub issues labelled 'request' (see CLAUDE.md). Keep it valid JSON: python3 -m json.tool board.json >/dev/null",
+  "_help": "The list behind index.html. Groups have a section (Game or Aircraft); every aircraft is its own group, with a family (e.g. Airbus A330 / A340). Each row: name, optional plane, and a state per app: done (green), doing (yellow, being worked on), no (not there yet), na (not needed in that app), unknown (not checked). Optional: note, who (e.g. {\"fly\": \"Eric\"}). Requests from the page are GitHub issues labelled 'request' (see CLAUDE.md). Keep it valid JSON: python3 -m json.tool board.json >/dev/null",
   "apps": [
     {"key": "web", "name": "Web game", "repo": "noname-ch/flightgame", "live": "https://noname-ch.github.io/flightgame/"},
     {"key": "fly", "name": "Fly", "repo": "noname-ch/flightgame-fly", "live": "https://noname-ch.github.io/flightgame-fly/"},
@@ -70,49 +70,100 @@
       ]
     },
     {
-      "name": "Airbus A220",
+      "name": "A220-100",
       "section": "Aircraft",
+      "family": "Airbus A220",
       "features": [
         {"plane": "A220-100", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "A220-100", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "A220-100", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
+      ]
+    },
+    {
+      "name": "A220-300",
+      "section": "Aircraft",
+      "family": "Airbus A220",
+      "features": [
         {"plane": "A220-300", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
         {"plane": "A220-300", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
       ]
     },
     {
-      "name": "Airbus A320 family",
+      "name": "A318",
       "section": "Aircraft",
+      "family": "Airbus A320 family",
       "features": [
         {"plane": "A318", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
         {"plane": "A318", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
         {"plane": "A318", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
         {"plane": "A318", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "done"},
-        {"plane": "A318", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"},
+        {"plane": "A318", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"}
+      ]
+    },
+    {
+      "name": "A319",
+      "section": "Aircraft",
+      "family": "Airbus A320 family",
+      "features": [
         {"plane": "A319", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
         {"plane": "A319", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
         {"plane": "A319", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
         {"plane": "A319", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "done"},
-        {"plane": "A319", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"},
+        {"plane": "A319", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"}
+      ]
+    },
+    {
+      "name": "A320ceo",
+      "section": "Aircraft",
+      "family": "Airbus A320 family",
+      "features": [
         {"plane": "A320ceo", "name": "In the game: 3D model and liveries", "web": "done", "fly": "done", "rust": "done"},
         {"plane": "A320ceo", "name": "Fly it yourself", "web": "na", "fly": "done", "rust": "done"},
         {"plane": "A320ceo", "name": "Realistic 3D cockpit", "web": "na", "fly": "done", "rust": "done"},
         {"plane": "A320ceo", "name": "Working buttons and systems", "web": "na", "fly": "done", "rust": "done"},
-        {"plane": "A320ceo", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "done", "rust": "no"},
+        {"plane": "A320ceo", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "done", "rust": "no"}
+      ]
+    },
+    {
+      "name": "A320neo",
+      "section": "Aircraft",
+      "family": "Airbus A320 family",
+      "features": [
         {"plane": "A320neo", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
         {"plane": "A320neo", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
         {"plane": "A320neo", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
         {"plane": "A320neo", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "done"},
-        {"plane": "A320neo", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"},
+        {"plane": "A320neo", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"}
+      ]
+    },
+    {
+      "name": "A321ceo",
+      "section": "Aircraft",
+      "family": "Airbus A320 family",
+      "features": [
         {"plane": "A321ceo", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
         {"plane": "A321ceo", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
         {"plane": "A321ceo", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
         {"plane": "A321ceo", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "done"},
-        {"plane": "A321ceo", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"},
+        {"plane": "A321ceo", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"}
+      ]
+    },
+    {
+      "name": "A321neo",
+      "section": "Aircraft",
+      "family": "Airbus A320 family",
+      "features": [
         {"plane": "A321neo", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
         {"plane": "A321neo", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
         {"plane": "A321neo", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
         {"plane": "A321neo", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "done"},
-        {"plane": "A321neo", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"},
+        {"plane": "A321neo", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"}
+      ]
+    },
+    {
+      "name": "A321XLR",
+      "section": "Aircraft",
+      "family": "Airbus A320 family",
+      "features": [
         {"plane": "A321XLR", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
         {"plane": "A321XLR", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
         {"plane": "A321XLR", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
@@ -121,11 +172,19 @@
       ]
     },
     {
-      "name": "Airbus A300 / A310",
+      "name": "A300",
       "section": "Aircraft",
+      "family": "Airbus A300 / A310",
       "features": [
         {"plane": "A300", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "A300", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "A300", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
+      ]
+    },
+    {
+      "name": "A310-200",
+      "section": "Aircraft",
+      "family": "Airbus A300 / A310",
+      "features": [
         {"plane": "A310-200", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
         {"plane": "A310-200", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
         {"plane": "A310-200", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
@@ -134,29 +193,46 @@
       ]
     },
     {
-      "name": "Airbus A330 / A340",
+      "name": "A330-200",
       "section": "Aircraft",
+      "family": "Airbus A330 / A340",
       "features": [
         {"plane": "A330-200", "name": "In the game: 3D model and liveries", "web": "done", "fly": "done", "rust": "done"},
         {"plane": "A330-200", "name": "Fly it yourself", "web": "na", "fly": "done", "rust": "no"},
         {"plane": "A330-200", "name": "Realistic 3D cockpit", "web": "na", "fly": "done", "rust": "done", "note": "Fly: each version as built (CRTs, ISIS, taxi camera); Rust: the A320 deck"},
         {"plane": "A330-200", "name": "Working buttons and systems", "web": "na", "fly": "done", "rust": "done"},
-        {"plane": "A330-200", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "done", "rust": "na"},
+        {"plane": "A330-200", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "done", "rust": "na"}
+      ]
+    },
+    {
+      "name": "A330-300",
+      "section": "Aircraft",
+      "family": "Airbus A330 / A340",
+      "features": [
         {"plane": "A330-300", "name": "In the game: 3D model and liveries", "web": "done", "fly": "done", "rust": "done"},
         {"plane": "A330-300", "name": "Fly it yourself", "web": "na", "fly": "done", "rust": "done"},
         {"plane": "A330-300", "name": "Realistic 3D cockpit", "web": "na", "fly": "done", "rust": "done", "note": "Fly: each version as built (CRTs, ISIS, taxi camera); Rust: the A320 deck"},
         {"plane": "A330-300", "name": "Working buttons and systems", "web": "na", "fly": "done", "rust": "done"},
-        {"plane": "A330-300", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "done", "rust": "no"},
+        {"plane": "A330-300", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "done", "rust": "no"}
+      ]
+    },
+    {
+      "name": "A330-900neo",
+      "section": "Aircraft",
+      "family": "Airbus A330 / A340",
+      "features": [
         {"plane": "A330-900neo", "name": "In the game: 3D model and liveries", "web": "done", "fly": "done", "rust": "done"},
         {"plane": "A330-900neo", "name": "Fly it yourself", "web": "na", "fly": "done", "rust": "no"},
         {"plane": "A330-900neo", "name": "Realistic 3D cockpit", "web": "na", "fly": "done", "rust": "done", "note": "Fly: each version as built (CRTs, ISIS, taxi camera); Rust: the A320 deck"},
         {"plane": "A330-900neo", "name": "Working buttons and systems", "web": "na", "fly": "done", "rust": "done"},
-        {"plane": "A330-900neo", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "done", "rust": "na"},
-        {"plane": "A340-600", "name": "In the game: 3D model and liveries", "web": "done", "fly": "done", "rust": "done"},
-        {"plane": "A340-600", "name": "Fly it yourself", "web": "na", "fly": "done", "rust": "done"},
-        {"plane": "A340-600", "name": "Realistic 3D cockpit", "web": "na", "fly": "done", "rust": "done", "note": "Fly: each version as built (CRTs, ISIS, taxi camera); Rust: the A320 deck"},
-        {"plane": "A340-600", "name": "Working buttons and systems", "web": "na", "fly": "done", "rust": "done"},
-        {"plane": "A340-600", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "done", "rust": "no"},
+        {"plane": "A330-900neo", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "done", "rust": "na"}
+      ]
+    },
+    {
+      "name": "A340-300",
+      "section": "Aircraft",
+      "family": "Airbus A330 / A340",
+      "features": [
         {"plane": "A340-300", "name": "In the game: 3D model and liveries", "web": "done", "fly": "done", "rust": "done"},
         {"plane": "A340-300", "name": "Fly it yourself", "web": "na", "fly": "done", "rust": "done"},
         {"plane": "A340-300", "name": "Realistic 3D cockpit", "web": "na", "fly": "done", "rust": "done", "note": "Fly: each version as built (CRTs, ISIS, taxi camera); Rust: the A320 deck"},
@@ -165,34 +241,82 @@
       ]
     },
     {
-      "name": "Airbus A350",
+      "name": "A340-600",
       "section": "Aircraft",
+      "family": "Airbus A330 / A340",
+      "features": [
+        {"plane": "A340-600", "name": "In the game: 3D model and liveries", "web": "done", "fly": "done", "rust": "done"},
+        {"plane": "A340-600", "name": "Fly it yourself", "web": "na", "fly": "done", "rust": "done"},
+        {"plane": "A340-600", "name": "Realistic 3D cockpit", "web": "na", "fly": "done", "rust": "done", "note": "Fly: each version as built (CRTs, ISIS, taxi camera); Rust: the A320 deck"},
+        {"plane": "A340-600", "name": "Working buttons and systems", "web": "na", "fly": "done", "rust": "done"},
+        {"plane": "A340-600", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "done", "rust": "no"}
+      ]
+    },
+    {
+      "name": "A350-900",
+      "section": "Aircraft",
+      "family": "Airbus A350",
       "features": [
         {"plane": "A350-900", "name": "In the game: 3D model and liveries", "web": "done", "fly": "done", "rust": "done"},
         {"plane": "A350-900", "name": "Fly it yourself", "web": "na", "fly": "done", "rust": "done"},
         {"plane": "A350-900", "name": "Realistic 3D cockpit", "web": "na", "fly": "done", "rust": "done"},
         {"plane": "A350-900", "name": "Working buttons and systems", "web": "na", "fly": "done", "rust": "done"},
-        {"plane": "A350-900", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "done", "rust": "no"},
-        {"plane": "A350-1000", "name": "In the game: 3D model and liveries", "web": "done", "fly": "done", "rust": "done"},
-        {"plane": "A350-1000", "name": "Fly it yourself", "web": "na", "fly": "done", "rust": "done"},
-        {"plane": "A350-1000", "name": "Realistic 3D cockpit", "web": "na", "fly": "done", "rust": "done"},
-        {"plane": "A350-1000", "name": "Working buttons and systems", "web": "na", "fly": "done", "rust": "done"},
-        {"plane": "A350-1000", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "done", "rust": "no"},
+        {"plane": "A350-900", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "done", "rust": "no"}
+      ]
+    },
+    {
+      "name": "A350-900ULR",
+      "section": "Aircraft",
+      "family": "Airbus A350",
+      "features": [
         {"plane": "A350-900ULR", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
         {"plane": "A350-900ULR", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
         {"plane": "A350-900ULR", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
         {"plane": "A350-900ULR", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "done"},
-        {"plane": "A350-900ULR", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"},
+        {"plane": "A350-900ULR", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"}
+      ]
+    },
+    {
+      "name": "A350-1000",
+      "section": "Aircraft",
+      "family": "Airbus A350",
+      "features": [
+        {"plane": "A350-1000", "name": "In the game: 3D model and liveries", "web": "done", "fly": "done", "rust": "done"},
+        {"plane": "A350-1000", "name": "Fly it yourself", "web": "na", "fly": "done", "rust": "done"},
+        {"plane": "A350-1000", "name": "Realistic 3D cockpit", "web": "na", "fly": "done", "rust": "done"},
+        {"plane": "A350-1000", "name": "Working buttons and systems", "web": "na", "fly": "done", "rust": "done"},
+        {"plane": "A350-1000", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "done", "rust": "no"}
+      ]
+    },
+    {
+      "name": "A350-1000ULR",
+      "section": "Aircraft",
+      "family": "Airbus A350",
+      "features": [
         {"plane": "A350-1000ULR", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
         {"plane": "A350-1000ULR", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
         {"plane": "A350-1000ULR", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
         {"plane": "A350-1000ULR", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "done"},
-        {"plane": "A350-1000ULR", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"},
+        {"plane": "A350-1000ULR", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"}
+      ]
+    },
+    {
+      "name": "A350-2000",
+      "section": "Aircraft",
+      "family": "Airbus A350",
+      "features": [
         {"plane": "A350-2000", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
         {"plane": "A350-2000", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
         {"plane": "A350-2000", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
         {"plane": "A350-2000", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "done"},
-        {"plane": "A350-2000", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"},
+        {"plane": "A350-2000", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"}
+      ]
+    },
+    {
+      "name": "A350-20000",
+      "section": "Aircraft",
+      "family": "Airbus A350",
+      "features": [
         {"plane": "A350-20000", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
         {"plane": "A350-20000", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
         {"plane": "A350-20000", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
@@ -201,8 +325,9 @@
       ]
     },
     {
-      "name": "Airbus A380",
+      "name": "A380-800",
       "section": "Aircraft",
+      "family": "Airbus A380",
       "features": [
         {"plane": "A380-800", "name": "In the game: 3D model and liveries", "web": "done", "fly": "done", "rust": "done"},
         {"plane": "A380-800", "name": "Fly it yourself", "web": "na", "fly": "done", "rust": "done"},
@@ -212,23 +337,52 @@
       ]
     },
     {
-      "name": "Boeing 707 / 720 / 727",
+      "name": "707-120",
       "section": "Aircraft",
+      "family": "Boeing 707 / 720 / 727",
       "features": [
         {"plane": "707-120", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "707-120", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "707-120", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
+      ]
+    },
+    {
+      "name": "707-320B",
+      "section": "Aircraft",
+      "family": "Boeing 707 / 720 / 727",
+      "features": [
+        {"plane": "707-320B", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "707-320B", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
+      ]
+    },
+    {
+      "name": "720",
+      "section": "Aircraft",
+      "family": "Boeing 707 / 720 / 727",
+      "features": [
         {"plane": "720", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
         {"plane": "720", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
         {"plane": "720", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
         {"plane": "720", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
-        {"plane": "720", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"},
-        {"plane": "707-320B", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "707-320B", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "720", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"}
+      ]
+    },
+    {
+      "name": "727-100",
+      "section": "Aircraft",
+      "family": "Boeing 707 / 720 / 727",
+      "features": [
         {"plane": "727-100", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
         {"plane": "727-100", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
         {"plane": "727-100", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
         {"plane": "727-100", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
-        {"plane": "727-100", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"},
+        {"plane": "727-100", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"}
+      ]
+    },
+    {
+      "name": "727-200",
+      "section": "Aircraft",
+      "family": "Boeing 707 / 720 / 727",
+      "features": [
         {"plane": "727-200", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
         {"plane": "727-200", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
         {"plane": "727-200", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
@@ -237,42 +391,88 @@
       ]
     },
     {
-      "name": "Boeing 737",
+      "name": "737 MAX 8",
       "section": "Aircraft",
+      "family": "Boeing 737",
       "features": [
-        {"plane": "737-700", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "737-700", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "737-700", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
-        {"plane": "737-700", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
-        {"plane": "737-700", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"},
-        {"plane": "737-800", "name": "In the game: 3D model and liveries", "web": "done", "fly": "done", "rust": "done"},
-        {"plane": "737-800", "name": "Fly it yourself", "web": "na", "fly": "done", "rust": "done"},
-        {"plane": "737-800", "name": "Realistic 3D cockpit", "web": "na", "fly": "no", "rust": "done"},
-        {"plane": "737-800", "name": "Working buttons and systems", "web": "na", "fly": "no", "rust": "unknown"},
-        {"plane": "737-800", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "done", "rust": "no"},
         {"plane": "737 MAX 8", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "737 MAX 8", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "737 MAX 8", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
+      ]
+    },
+    {
+      "name": "737 MAX 9",
+      "section": "Aircraft",
+      "family": "Boeing 737",
+      "features": [
         {"plane": "737 MAX 9", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "737 MAX 9", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "737 MAX 9", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
+      ]
+    },
+    {
+      "name": "737-200",
+      "section": "Aircraft",
+      "family": "Boeing 737",
+      "features": [
         {"plane": "737-200", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "737-200", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "737-200", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
+      ]
+    },
+    {
+      "name": "737-300",
+      "section": "Aircraft",
+      "family": "Boeing 737",
+      "features": [
         {"plane": "737-300", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
         {"plane": "737-300", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
       ]
     },
     {
-      "name": "Boeing 717 / 757 / 767",
+      "name": "737-700",
       "section": "Aircraft",
+      "family": "Boeing 737",
+      "features": [
+        {"plane": "737-700", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "737-700", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "737-700", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
+        {"plane": "737-700", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
+        {"plane": "737-700", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"}
+      ]
+    },
+    {
+      "name": "737-800",
+      "section": "Aircraft",
+      "family": "Boeing 737",
+      "features": [
+        {"plane": "737-800", "name": "In the game: 3D model and liveries", "web": "done", "fly": "done", "rust": "done"},
+        {"plane": "737-800", "name": "Fly it yourself", "web": "na", "fly": "done", "rust": "done"},
+        {"plane": "737-800", "name": "Realistic 3D cockpit", "web": "na", "fly": "no", "rust": "done"},
+        {"plane": "737-800", "name": "Working buttons and systems", "web": "na", "fly": "no", "rust": "unknown"},
+        {"plane": "737-800", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "done", "rust": "no"}
+      ]
+    },
+    {
+      "name": "717-200",
+      "section": "Aircraft",
+      "family": "Boeing 717 / 757 / 767",
+      "features": [
+        {"plane": "717-200", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "717-200", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
+      ]
+    },
+    {
+      "name": "757-200",
+      "section": "Aircraft",
+      "family": "Boeing 717 / 757 / 767",
       "features": [
         {"plane": "757-200", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "757-200", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "717-200", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "717-200", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "767-300ER", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "767-300ER", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "767-300ER", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
-        {"plane": "767-300ER", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
-        {"plane": "767-300ER", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"},
+        {"plane": "757-200", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
+      ]
+    },
+    {
+      "name": "767-200",
+      "section": "Aircraft",
+      "family": "Boeing 717 / 757 / 767",
+      "features": [
         {"plane": "767-200", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
         {"plane": "767-200", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
         {"plane": "767-200", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
@@ -281,29 +481,70 @@
       ]
     },
     {
-      "name": "Boeing 747",
+      "name": "767-300ER",
       "section": "Aircraft",
+      "family": "Boeing 717 / 757 / 767",
+      "features": [
+        {"plane": "767-300ER", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "767-300ER", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "767-300ER", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
+        {"plane": "767-300ER", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
+        {"plane": "767-300ER", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"}
+      ]
+    },
+    {
+      "name": "747-8I",
+      "section": "Aircraft",
+      "family": "Boeing 747",
+      "features": [
+        {"plane": "747-8I", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "747-8I", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "747-8I", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
+        {"plane": "747-8I", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
+        {"plane": "747-8I", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"}
+      ]
+    },
+    {
+      "name": "747-100",
+      "section": "Aircraft",
+      "family": "Boeing 747",
+      "features": [
+        {"plane": "747-100", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "747-100", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "747-100", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
+        {"plane": "747-100", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
+        {"plane": "747-100", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"}
+      ]
+    },
+    {
+      "name": "747-200B",
+      "section": "Aircraft",
+      "family": "Boeing 747",
+      "features": [
+        {"plane": "747-200B", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "747-200B", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "747-200B", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
+        {"plane": "747-200B", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
+        {"plane": "747-200B", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"}
+      ]
+    },
+    {
+      "name": "747-400",
+      "section": "Aircraft",
+      "family": "Boeing 747",
       "features": [
         {"plane": "747-400", "name": "In the game: 3D model and liveries", "web": "done", "fly": "done", "rust": "done"},
         {"plane": "747-400", "name": "Fly it yourself", "web": "na", "fly": "done", "rust": "done"},
         {"plane": "747-400", "name": "Realistic 3D cockpit", "web": "na", "fly": "no", "rust": "done"},
         {"plane": "747-400", "name": "Working buttons and systems", "web": "na", "fly": "no", "rust": "unknown"},
-        {"plane": "747-400", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "done", "rust": "no"},
-        {"plane": "747-8I", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "747-8I", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "747-8I", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
-        {"plane": "747-8I", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
-        {"plane": "747-8I", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"},
-        {"plane": "747-100", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "747-100", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "747-100", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
-        {"plane": "747-100", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
-        {"plane": "747-100", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"},
-        {"plane": "747-200B", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "747-200B", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "747-200B", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
-        {"plane": "747-200B", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
-        {"plane": "747-200B", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"},
+        {"plane": "747-400", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "done", "rust": "no"}
+      ]
+    },
+    {
+      "name": "747SP",
+      "section": "Aircraft",
+      "family": "Boeing 747",
+      "features": [
         {"plane": "747SP", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
         {"plane": "747SP", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
         {"plane": "747SP", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
@@ -312,34 +553,10 @@
       ]
     },
     {
-      "name": "Boeing 777 / 787",
+      "name": "777-9",
       "section": "Aircraft",
+      "family": "Boeing 777 / 787",
       "features": [
-        {"plane": "787-8", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "787-8", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "787-8", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
-        {"plane": "787-8", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
-        {"plane": "787-8", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"},
-        {"plane": "787-9", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "787-9", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "787-9", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
-        {"plane": "787-9", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
-        {"plane": "787-9", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"},
-        {"plane": "787-10", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "787-10", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "787-10", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
-        {"plane": "787-10", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
-        {"plane": "787-10", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"},
-        {"plane": "777-200ER", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "777-200ER", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "777-200ER", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
-        {"plane": "777-200ER", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
-        {"plane": "777-200ER", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"},
-        {"plane": "777-300ER", "name": "In the game: 3D model and liveries", "web": "done", "fly": "done", "rust": "done"},
-        {"plane": "777-300ER", "name": "Fly it yourself", "web": "na", "fly": "done", "rust": "done"},
-        {"plane": "777-300ER", "name": "Realistic 3D cockpit", "web": "na", "fly": "no", "rust": "done"},
-        {"plane": "777-300ER", "name": "Working buttons and systems", "web": "na", "fly": "no", "rust": "unknown"},
-        {"plane": "777-300ER", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "done", "rust": "no"},
         {"plane": "777-9", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
         {"plane": "777-9", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
         {"plane": "777-9", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
@@ -348,67 +565,151 @@
       ]
     },
     {
-      "name": "Douglas / McDonnell Douglas jets",
+      "name": "777-200ER",
       "section": "Aircraft",
+      "family": "Boeing 777 / 787",
       "features": [
-        {"plane": "McDonnell Douglas MD-82", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "McDonnell Douglas MD-82", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "777-200ER", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "777-200ER", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "777-200ER", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
+        {"plane": "777-200ER", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
+        {"plane": "777-200ER", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"}
+      ]
+    },
+    {
+      "name": "777-300ER",
+      "section": "Aircraft",
+      "family": "Boeing 777 / 787",
+      "features": [
+        {"plane": "777-300ER", "name": "In the game: 3D model and liveries", "web": "done", "fly": "done", "rust": "done"},
+        {"plane": "777-300ER", "name": "Fly it yourself", "web": "na", "fly": "done", "rust": "done"},
+        {"plane": "777-300ER", "name": "Realistic 3D cockpit", "web": "na", "fly": "no", "rust": "done"},
+        {"plane": "777-300ER", "name": "Working buttons and systems", "web": "na", "fly": "no", "rust": "unknown"},
+        {"plane": "777-300ER", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "done", "rust": "no"}
+      ]
+    },
+    {
+      "name": "787-8",
+      "section": "Aircraft",
+      "family": "Boeing 777 / 787",
+      "features": [
+        {"plane": "787-8", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "787-8", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "787-8", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
+        {"plane": "787-8", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
+        {"plane": "787-8", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"}
+      ]
+    },
+    {
+      "name": "787-9",
+      "section": "Aircraft",
+      "family": "Boeing 777 / 787",
+      "features": [
+        {"plane": "787-9", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "787-9", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "787-9", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
+        {"plane": "787-9", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
+        {"plane": "787-9", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"}
+      ]
+    },
+    {
+      "name": "787-10",
+      "section": "Aircraft",
+      "family": "Boeing 777 / 787",
+      "features": [
+        {"plane": "787-10", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "787-10", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "787-10", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
+        {"plane": "787-10", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
+        {"plane": "787-10", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"}
+      ]
+    },
+    {
+      "name": "Douglas DC-8-50",
+      "section": "Aircraft",
+      "family": "Douglas / McDonnell Douglas jets",
+      "features": [
         {"plane": "Douglas DC-8-50", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "Douglas DC-8-50", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "Douglas DC-9-30", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "Douglas DC-9-30", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "Douglas DC-8-50", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
+      ]
+    },
+    {
+      "name": "Douglas DC-8-63",
+      "section": "Aircraft",
+      "family": "Douglas / McDonnell Douglas jets",
+      "features": [
         {"plane": "Douglas DC-8-63", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "Douglas DC-8-63", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "Douglas DC-8-63", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
+      ]
+    },
+    {
+      "name": "Douglas DC-9-30",
+      "section": "Aircraft",
+      "family": "Douglas / McDonnell Douglas jets",
+      "features": [
+        {"plane": "Douglas DC-9-30", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "Douglas DC-9-30", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
+      ]
+    },
+    {
+      "name": "Douglas DC-9-50",
+      "section": "Aircraft",
+      "family": "Douglas / McDonnell Douglas jets",
+      "features": [
         {"plane": "Douglas DC-9-50", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "Douglas DC-9-50", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "McDonnell Douglas MD-81", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "McDonnell Douglas MD-81", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "Douglas DC-9-50", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
+      ]
+    },
+    {
+      "name": "McDonnell Douglas DC-10-10",
+      "section": "Aircraft",
+      "family": "Douglas / McDonnell Douglas jets",
+      "features": [
         {"plane": "McDonnell Douglas DC-10-10", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "McDonnell Douglas DC-10-10", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "McDonnell Douglas DC-10-10", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
+      ]
+    },
+    {
+      "name": "McDonnell Douglas DC-10-30",
+      "section": "Aircraft",
+      "family": "Douglas / McDonnell Douglas jets",
+      "features": [
         {"plane": "McDonnell Douglas DC-10-30", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "McDonnell Douglas DC-10-30", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "McDonnell Douglas DC-10-30", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
+      ]
+    },
+    {
+      "name": "McDonnell Douglas MD-11",
+      "section": "Aircraft",
+      "family": "Douglas / McDonnell Douglas jets",
+      "features": [
         {"plane": "McDonnell Douglas MD-11", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
         {"plane": "McDonnell Douglas MD-11", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
       ]
     },
     {
-      "name": "Embraer",
+      "name": "McDonnell Douglas MD-81",
       "section": "Aircraft",
+      "family": "Douglas / McDonnell Douglas jets",
       "features": [
-        {"plane": "Embraer EMB 110 Bandeirante", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "Embraer EMB 110 Bandeirante", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "Embraer EMB 120 Brasília", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "Embraer EMB 120 Brasília", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "Embraer ERJ 145", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "Embraer ERJ 145", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "Embraer ERJ 145", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
-        {"plane": "Embraer ERJ 145", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
-        {"plane": "Embraer ERJ 145", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"},
-        {"plane": "Embraer E175", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "Embraer E175", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "Embraer E175", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
-        {"plane": "Embraer E175", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
-        {"plane": "Embraer E175", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"},
-        {"plane": "Embraer E190", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "Embraer E190", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "Embraer E190", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
-        {"plane": "Embraer E190", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
-        {"plane": "Embraer E190", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"},
-        {"plane": "Embraer E195", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "Embraer E195", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "Embraer E195", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
-        {"plane": "Embraer E195", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
-        {"plane": "Embraer E195", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"},
-        {"plane": "Embraer E190-E2", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "Embraer E190-E2", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "Embraer E190-E2", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
-        {"plane": "Embraer E190-E2", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
-        {"plane": "Embraer E190-E2", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"},
-        {"plane": "Embraer E195-E2", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "Embraer E195-E2", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "Embraer E195-E2", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
-        {"plane": "Embraer E195-E2", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
-        {"plane": "Embraer E195-E2", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"},
+        {"plane": "McDonnell Douglas MD-81", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "McDonnell Douglas MD-81", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
+      ]
+    },
+    {
+      "name": "McDonnell Douglas MD-82",
+      "section": "Aircraft",
+      "family": "Douglas / McDonnell Douglas jets",
+      "features": [
+        {"plane": "McDonnell Douglas MD-82", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "McDonnell Douglas MD-82", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
+      ]
+    },
+    {
+      "name": "Embraer E170",
+      "section": "Aircraft",
+      "family": "Embraer",
+      "features": [
         {"plane": "Embraer E170", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
         {"plane": "Embraer E170", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
         {"plane": "Embraer E170", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
@@ -417,42 +718,136 @@
       ]
     },
     {
-      "name": "Bombardier and de Havilland Canada",
+      "name": "Embraer E175",
       "section": "Aircraft",
+      "family": "Embraer",
       "features": [
-        {"plane": "DHC-6 Twin Otter 400", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "DHC-6 Twin Otter 400", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "Dash 8-400", "name": "In the game: 3D model and liveries", "web": "done", "fly": "done", "rust": "done"},
-        {"plane": "Dash 8-400", "name": "Fly it yourself", "web": "na", "fly": "done", "rust": "done"},
-        {"plane": "Dash 8-400", "name": "Realistic 3D cockpit", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "Dash 8-400", "name": "Working buttons and systems", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "Dash 8-400", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "done", "rust": "no"},
-        {"plane": "DHC-6 Twin Otter", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "DHC-6 Twin Otter", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "DHC Dash 7", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "DHC Dash 7", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "DHC Dash 8-100", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "DHC Dash 8-100", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "Embraer E175", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "Embraer E175", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "Embraer E175", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
+        {"plane": "Embraer E175", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
+        {"plane": "Embraer E175", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"}
+      ]
+    },
+    {
+      "name": "Embraer E190",
+      "section": "Aircraft",
+      "family": "Embraer",
+      "features": [
+        {"plane": "Embraer E190", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "Embraer E190", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "Embraer E190", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
+        {"plane": "Embraer E190", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
+        {"plane": "Embraer E190", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"}
+      ]
+    },
+    {
+      "name": "Embraer E190-E2",
+      "section": "Aircraft",
+      "family": "Embraer",
+      "features": [
+        {"plane": "Embraer E190-E2", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "Embraer E190-E2", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "Embraer E190-E2", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
+        {"plane": "Embraer E190-E2", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
+        {"plane": "Embraer E190-E2", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"}
+      ]
+    },
+    {
+      "name": "Embraer E195",
+      "section": "Aircraft",
+      "family": "Embraer",
+      "features": [
+        {"plane": "Embraer E195", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "Embraer E195", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "Embraer E195", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
+        {"plane": "Embraer E195", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
+        {"plane": "Embraer E195", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"}
+      ]
+    },
+    {
+      "name": "Embraer E195-E2",
+      "section": "Aircraft",
+      "family": "Embraer",
+      "features": [
+        {"plane": "Embraer E195-E2", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "Embraer E195-E2", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "Embraer E195-E2", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
+        {"plane": "Embraer E195-E2", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
+        {"plane": "Embraer E195-E2", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"}
+      ]
+    },
+    {
+      "name": "Embraer EMB 110 Bandeirante",
+      "section": "Aircraft",
+      "family": "Embraer",
+      "features": [
+        {"plane": "Embraer EMB 110 Bandeirante", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "Embraer EMB 110 Bandeirante", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
+      ]
+    },
+    {
+      "name": "Embraer EMB 120 Brasília",
+      "section": "Aircraft",
+      "family": "Embraer",
+      "features": [
+        {"plane": "Embraer EMB 120 Brasília", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "Embraer EMB 120 Brasília", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
+      ]
+    },
+    {
+      "name": "Embraer ERJ 145",
+      "section": "Aircraft",
+      "family": "Embraer",
+      "features": [
+        {"plane": "Embraer ERJ 145", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "Embraer ERJ 145", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "Embraer ERJ 145", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
+        {"plane": "Embraer ERJ 145", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
+        {"plane": "Embraer ERJ 145", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"}
+      ]
+    },
+    {
+      "name": "Bombardier CRJ200",
+      "section": "Aircraft",
+      "family": "Bombardier and de Havilland Canada",
+      "features": [
         {"plane": "Bombardier CRJ200", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
         {"plane": "Bombardier CRJ200", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
         {"plane": "Bombardier CRJ200", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
         {"plane": "Bombardier CRJ200", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
-        {"plane": "Bombardier CRJ200", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"},
-        {"plane": "Bombardier CRJ900", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "Bombardier CRJ900", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "Bombardier CRJ900", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
-        {"plane": "Bombardier CRJ900", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
-        {"plane": "Bombardier CRJ900", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"},
-        {"plane": "Canadair CRJ100", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "Canadair CRJ100", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "Canadair CRJ100", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
-        {"plane": "Canadair CRJ100", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
-        {"plane": "Canadair CRJ100", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"},
+        {"plane": "Bombardier CRJ200", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"}
+      ]
+    },
+    {
+      "name": "Bombardier CRJ700",
+      "section": "Aircraft",
+      "family": "Bombardier and de Havilland Canada",
+      "features": [
         {"plane": "Bombardier CRJ700", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
         {"plane": "Bombardier CRJ700", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
         {"plane": "Bombardier CRJ700", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
         {"plane": "Bombardier CRJ700", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
-        {"plane": "Bombardier CRJ700", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"},
+        {"plane": "Bombardier CRJ700", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"}
+      ]
+    },
+    {
+      "name": "Bombardier CRJ900",
+      "section": "Aircraft",
+      "family": "Bombardier and de Havilland Canada",
+      "features": [
+        {"plane": "Bombardier CRJ900", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "Bombardier CRJ900", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "Bombardier CRJ900", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
+        {"plane": "Bombardier CRJ900", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
+        {"plane": "Bombardier CRJ900", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"}
+      ]
+    },
+    {
+      "name": "Bombardier Global 7500",
+      "section": "Aircraft",
+      "family": "Bombardier and de Havilland Canada",
+      "features": [
         {"plane": "Bombardier Global 7500", "name": "In the game: 3D model and liveries", "web": "no", "fly": "done", "rust": "no", "note": "flyable only, not in the airline game"},
         {"plane": "Bombardier Global 7500", "name": "Fly it yourself", "web": "na", "fly": "done", "rust": "done"},
         {"plane": "Bombardier Global 7500", "name": "Realistic 3D cockpit", "web": "na", "fly": "no", "rust": "no"},
@@ -461,102 +856,184 @@
       ]
     },
     {
-      "name": "Other regional jets",
+      "name": "Canadair CRJ100",
       "section": "Aircraft",
+      "family": "Bombardier and de Havilland Canada",
       "features": [
-        {"plane": "Sukhoi Superjet 100", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "Sukhoi Superjet 100", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "Fokker 100", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "Fokker 100", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "Canadair CRJ100", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "Canadair CRJ100", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "Canadair CRJ100", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
+        {"plane": "Canadair CRJ100", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
+        {"plane": "Canadair CRJ100", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"}
+      ]
+    },
+    {
+      "name": "Dash 8-400",
+      "section": "Aircraft",
+      "family": "Bombardier and de Havilland Canada",
+      "features": [
+        {"plane": "Dash 8-400", "name": "In the game: 3D model and liveries", "web": "done", "fly": "done", "rust": "done"},
+        {"plane": "Dash 8-400", "name": "Fly it yourself", "web": "na", "fly": "done", "rust": "done"},
+        {"plane": "Dash 8-400", "name": "Realistic 3D cockpit", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "Dash 8-400", "name": "Working buttons and systems", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "Dash 8-400", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "done", "rust": "no"}
+      ]
+    },
+    {
+      "name": "DHC Dash 7",
+      "section": "Aircraft",
+      "family": "Bombardier and de Havilland Canada",
+      "features": [
+        {"plane": "DHC Dash 7", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "DHC Dash 7", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
+      ]
+    },
+    {
+      "name": "DHC Dash 8-100",
+      "section": "Aircraft",
+      "family": "Bombardier and de Havilland Canada",
+      "features": [
+        {"plane": "DHC Dash 8-100", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "DHC Dash 8-100", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
+      ]
+    },
+    {
+      "name": "DHC-6 Twin Otter",
+      "section": "Aircraft",
+      "family": "Bombardier and de Havilland Canada",
+      "features": [
+        {"plane": "DHC-6 Twin Otter", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "DHC-6 Twin Otter", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
+      ]
+    },
+    {
+      "name": "DHC-6 Twin Otter 400",
+      "section": "Aircraft",
+      "family": "Bombardier and de Havilland Canada",
+      "features": [
+        {"plane": "DHC-6 Twin Otter 400", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "DHC-6 Twin Otter 400", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
+      ]
+    },
+    {
+      "name": "Avro RJ100",
+      "section": "Aircraft",
+      "family": "Other regional jets",
+      "features": [
         {"plane": "Avro RJ100", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "Avro RJ100", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "Avro RJ100", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
+      ]
+    },
+    {
+      "name": "BAC One-Eleven 200",
+      "section": "Aircraft",
+      "family": "Other regional jets",
+      "features": [
         {"plane": "BAC One-Eleven 200", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "BAC One-Eleven 200", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "Tupolev Tu-134", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "Tupolev Tu-134", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "Yakovlev Yak-40", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "Yakovlev Yak-40", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "Fokker F28 Fellowship", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "Fokker F28 Fellowship", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "VFW-Fokker 614", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "VFW-Fokker 614", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "BAC One-Eleven 200", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
+      ]
+    },
+    {
+      "name": "BAe 146-200",
+      "section": "Aircraft",
+      "family": "Other regional jets",
+      "features": [
         {"plane": "BAe 146-200", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "BAe 146-200", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "BAe 146-200", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
+      ]
+    },
+    {
+      "name": "Fokker 70",
+      "section": "Aircraft",
+      "family": "Other regional jets",
+      "features": [
         {"plane": "Fokker 70", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
         {"plane": "Fokker 70", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
       ]
     },
     {
-      "name": "Turboprops",
+      "name": "Fokker 100",
       "section": "Aircraft",
+      "family": "Other regional jets",
       "features": [
-        {"plane": "Dornier 228NG", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "Dornier 228NG", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "Beechcraft 1900D", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "Beechcraft 1900D", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "Dornier 328", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "Dornier 328", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "Saab 340B", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "Saab 340B", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "Saab 2000", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "Saab 2000", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "ATR 42-600", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "ATR 42-600", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "ATR 42-600", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
-        {"plane": "ATR 42-600", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
-        {"plane": "ATR 42-600", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"},
-        {"plane": "ATR 72-600", "name": "In the game: 3D model and liveries", "web": "done", "fly": "done", "rust": "done"},
-        {"plane": "ATR 72-600", "name": "Fly it yourself", "web": "na", "fly": "done", "rust": "done"},
-        {"plane": "ATR 72-600", "name": "Realistic 3D cockpit", "web": "na", "fly": "no", "rust": "done"},
-        {"plane": "ATR 72-600", "name": "Working buttons and systems", "web": "na", "fly": "no", "rust": "unknown"},
-        {"plane": "ATR 72-600", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "done", "rust": "no"},
-        {"plane": "Vickers Viscount 700", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "Vickers Viscount 700", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "Vickers Viscount 700", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
-        {"plane": "Vickers Viscount 700", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
-        {"plane": "Vickers Viscount 700", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"},
-        {"plane": "Bristol Britannia 310", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "Bristol Britannia 310", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "Bristol Britannia 310", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
-        {"plane": "Bristol Britannia 310", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
-        {"plane": "Bristol Britannia 310", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"},
-        {"plane": "Fokker F27 Friendship", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "Fokker F27 Friendship", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "Fokker F27 Friendship", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
-        {"plane": "Fokker F27 Friendship", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
-        {"plane": "Fokker F27 Friendship", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"},
-        {"plane": "Lockheed L-188 Electra", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "Lockheed L-188 Electra", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "Lockheed L-188 Electra", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
-        {"plane": "Lockheed L-188 Electra", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
-        {"plane": "Lockheed L-188 Electra", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"},
-        {"plane": "Ilyushin Il-18", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "Ilyushin Il-18", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "Ilyushin Il-18", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
-        {"plane": "Ilyushin Il-18", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
-        {"plane": "Ilyushin Il-18", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"},
-        {"plane": "Tupolev Tu-114", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "Tupolev Tu-114", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "Tupolev Tu-114", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
-        {"plane": "Tupolev Tu-114", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
-        {"plane": "Tupolev Tu-114", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"},
-        {"plane": "Hawker Siddeley HS 748", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "Hawker Siddeley HS 748", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "Hawker Siddeley HS 748", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
-        {"plane": "Hawker Siddeley HS 748", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
-        {"plane": "Hawker Siddeley HS 748", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"},
-        {"plane": "NAMC YS-11", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "NAMC YS-11", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "NAMC YS-11", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
-        {"plane": "NAMC YS-11", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
-        {"plane": "NAMC YS-11", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"},
+        {"plane": "Fokker 100", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "Fokker 100", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
+      ]
+    },
+    {
+      "name": "Fokker F28 Fellowship",
+      "section": "Aircraft",
+      "family": "Other regional jets",
+      "features": [
+        {"plane": "Fokker F28 Fellowship", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "Fokker F28 Fellowship", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
+      ]
+    },
+    {
+      "name": "Sukhoi Superjet 100",
+      "section": "Aircraft",
+      "family": "Other regional jets",
+      "features": [
+        {"plane": "Sukhoi Superjet 100", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "Sukhoi Superjet 100", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
+      ]
+    },
+    {
+      "name": "Tupolev Tu-134",
+      "section": "Aircraft",
+      "family": "Other regional jets",
+      "features": [
+        {"plane": "Tupolev Tu-134", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "Tupolev Tu-134", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
+      ]
+    },
+    {
+      "name": "VFW-Fokker 614",
+      "section": "Aircraft",
+      "family": "Other regional jets",
+      "features": [
+        {"plane": "VFW-Fokker 614", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "VFW-Fokker 614", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
+      ]
+    },
+    {
+      "name": "Yakovlev Yak-40",
+      "section": "Aircraft",
+      "family": "Other regional jets",
+      "features": [
+        {"plane": "Yakovlev Yak-40", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "Yakovlev Yak-40", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
+      ]
+    },
+    {
+      "name": "ATR 42-300",
+      "section": "Aircraft",
+      "family": "Turboprops",
+      "features": [
         {"plane": "ATR 42-300", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
         {"plane": "ATR 42-300", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
         {"plane": "ATR 42-300", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
         {"plane": "ATR 42-300", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
-        {"plane": "ATR 42-300", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"},
-        {"plane": "Fokker 50", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "Fokker 50", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "ATR 42-300", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"}
+      ]
+    },
+    {
+      "name": "ATR 42-600",
+      "section": "Aircraft",
+      "family": "Turboprops",
+      "features": [
+        {"plane": "ATR 42-600", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "ATR 42-600", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "ATR 42-600", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
+        {"plane": "ATR 42-600", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
+        {"plane": "ATR 42-600", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"}
+      ]
+    },
+    {
+      "name": "ATR 72-500",
+      "section": "Aircraft",
+      "family": "Turboprops",
+      "features": [
         {"plane": "ATR 72-500", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
         {"plane": "ATR 72-500", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
         {"plane": "ATR 72-500", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
@@ -565,14 +1042,184 @@
       ]
     },
     {
-      "name": "Supersonic",
+      "name": "ATR 72-600",
       "section": "Aircraft",
+      "family": "Turboprops",
+      "features": [
+        {"plane": "ATR 72-600", "name": "In the game: 3D model and liveries", "web": "done", "fly": "done", "rust": "done"},
+        {"plane": "ATR 72-600", "name": "Fly it yourself", "web": "na", "fly": "done", "rust": "done"},
+        {"plane": "ATR 72-600", "name": "Realistic 3D cockpit", "web": "na", "fly": "no", "rust": "done"},
+        {"plane": "ATR 72-600", "name": "Working buttons and systems", "web": "na", "fly": "no", "rust": "unknown"},
+        {"plane": "ATR 72-600", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "done", "rust": "no"}
+      ]
+    },
+    {
+      "name": "Beechcraft 1900D",
+      "section": "Aircraft",
+      "family": "Turboprops",
+      "features": [
+        {"plane": "Beechcraft 1900D", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "Beechcraft 1900D", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
+      ]
+    },
+    {
+      "name": "Bristol Britannia 310",
+      "section": "Aircraft",
+      "family": "Turboprops",
+      "features": [
+        {"plane": "Bristol Britannia 310", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "Bristol Britannia 310", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "Bristol Britannia 310", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
+        {"plane": "Bristol Britannia 310", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
+        {"plane": "Bristol Britannia 310", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"}
+      ]
+    },
+    {
+      "name": "Dornier 228NG",
+      "section": "Aircraft",
+      "family": "Turboprops",
+      "features": [
+        {"plane": "Dornier 228NG", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "Dornier 228NG", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
+      ]
+    },
+    {
+      "name": "Dornier 328",
+      "section": "Aircraft",
+      "family": "Turboprops",
+      "features": [
+        {"plane": "Dornier 328", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "Dornier 328", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
+      ]
+    },
+    {
+      "name": "Fokker 50",
+      "section": "Aircraft",
+      "family": "Turboprops",
+      "features": [
+        {"plane": "Fokker 50", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "Fokker 50", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
+      ]
+    },
+    {
+      "name": "Fokker F27 Friendship",
+      "section": "Aircraft",
+      "family": "Turboprops",
+      "features": [
+        {"plane": "Fokker F27 Friendship", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "Fokker F27 Friendship", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "Fokker F27 Friendship", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
+        {"plane": "Fokker F27 Friendship", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
+        {"plane": "Fokker F27 Friendship", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"}
+      ]
+    },
+    {
+      "name": "Hawker Siddeley HS 748",
+      "section": "Aircraft",
+      "family": "Turboprops",
+      "features": [
+        {"plane": "Hawker Siddeley HS 748", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "Hawker Siddeley HS 748", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "Hawker Siddeley HS 748", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
+        {"plane": "Hawker Siddeley HS 748", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
+        {"plane": "Hawker Siddeley HS 748", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"}
+      ]
+    },
+    {
+      "name": "Ilyushin Il-18",
+      "section": "Aircraft",
+      "family": "Turboprops",
+      "features": [
+        {"plane": "Ilyushin Il-18", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "Ilyushin Il-18", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "Ilyushin Il-18", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
+        {"plane": "Ilyushin Il-18", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
+        {"plane": "Ilyushin Il-18", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"}
+      ]
+    },
+    {
+      "name": "Lockheed L-188 Electra",
+      "section": "Aircraft",
+      "family": "Turboprops",
+      "features": [
+        {"plane": "Lockheed L-188 Electra", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "Lockheed L-188 Electra", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "Lockheed L-188 Electra", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
+        {"plane": "Lockheed L-188 Electra", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
+        {"plane": "Lockheed L-188 Electra", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"}
+      ]
+    },
+    {
+      "name": "NAMC YS-11",
+      "section": "Aircraft",
+      "family": "Turboprops",
+      "features": [
+        {"plane": "NAMC YS-11", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "NAMC YS-11", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "NAMC YS-11", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
+        {"plane": "NAMC YS-11", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
+        {"plane": "NAMC YS-11", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"}
+      ]
+    },
+    {
+      "name": "Saab 340B",
+      "section": "Aircraft",
+      "family": "Turboprops",
+      "features": [
+        {"plane": "Saab 340B", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "Saab 340B", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
+      ]
+    },
+    {
+      "name": "Saab 2000",
+      "section": "Aircraft",
+      "family": "Turboprops",
+      "features": [
+        {"plane": "Saab 2000", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "Saab 2000", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
+      ]
+    },
+    {
+      "name": "Tupolev Tu-114",
+      "section": "Aircraft",
+      "family": "Turboprops",
+      "features": [
+        {"plane": "Tupolev Tu-114", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "Tupolev Tu-114", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "Tupolev Tu-114", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
+        {"plane": "Tupolev Tu-114", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
+        {"plane": "Tupolev Tu-114", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"}
+      ]
+    },
+    {
+      "name": "Vickers Viscount 700",
+      "section": "Aircraft",
+      "family": "Turboprops",
+      "features": [
+        {"plane": "Vickers Viscount 700", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "Vickers Viscount 700", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "Vickers Viscount 700", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
+        {"plane": "Vickers Viscount 700", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
+        {"plane": "Vickers Viscount 700", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"}
+      ]
+    },
+    {
+      "name": "Aérospatiale/BAC Concorde",
+      "section": "Aircraft",
+      "family": "Supersonic",
       "features": [
         {"plane": "Aérospatiale/BAC Concorde", "name": "In the game: 3D model and liveries", "web": "done", "fly": "done", "rust": "done"},
         {"plane": "Aérospatiale/BAC Concorde", "name": "Fly it yourself", "web": "na", "fly": "done", "rust": "done"},
         {"plane": "Aérospatiale/BAC Concorde", "name": "Realistic 3D cockpit", "web": "na", "fly": "no", "rust": "done"},
         {"plane": "Aérospatiale/BAC Concorde", "name": "Working buttons and systems", "web": "na", "fly": "no", "rust": "unknown"},
-        {"plane": "Aérospatiale/BAC Concorde", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "done", "rust": "no"},
+        {"plane": "Aérospatiale/BAC Concorde", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "done", "rust": "no"}
+      ]
+    },
+    {
+      "name": "Tupolev Tu-144",
+      "section": "Aircraft",
+      "family": "Supersonic",
+      "features": [
         {"plane": "Tupolev Tu-144", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
         {"plane": "Tupolev Tu-144", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
         {"plane": "Tupolev Tu-144", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
@@ -581,39 +1228,58 @@
       ]
     },
     {
-      "name": "Classics and propliners",
+      "name": "Convair CV-340",
       "section": "Aircraft",
+      "family": "Classics and propliners",
       "features": [
-        {"plane": "Junkers Ju 52/3m", "name": "In the game: 3D model and liveries", "web": "done", "fly": "done", "rust": "done"},
-        {"plane": "Junkers Ju 52/3m", "name": "Fly it yourself", "web": "na", "fly": "done", "rust": "done"},
-        {"plane": "Junkers Ju 52/3m", "name": "Realistic 3D cockpit", "web": "na", "fly": "no", "rust": "done"},
-        {"plane": "Junkers Ju 52/3m", "name": "Working buttons and systems", "web": "na", "fly": "no", "rust": "unknown"},
-        {"plane": "Junkers Ju 52/3m", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "done", "rust": "no"},
-        {"plane": "Douglas DC-3", "name": "In the game: 3D model and liveries", "web": "done", "fly": "done", "rust": "done"},
-        {"plane": "Douglas DC-3", "name": "Fly it yourself", "web": "na", "fly": "done", "rust": "done"},
-        {"plane": "Douglas DC-3", "name": "Realistic 3D cockpit", "web": "na", "fly": "no", "rust": "done"},
-        {"plane": "Douglas DC-3", "name": "Working buttons and systems", "web": "na", "fly": "no", "rust": "unknown"},
-        {"plane": "Douglas DC-3", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "done", "rust": "no"},
-        {"plane": "Douglas DC-4", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "Douglas DC-4", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "Douglas DC-4", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
-        {"plane": "Douglas DC-4", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
-        {"plane": "Douglas DC-4", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"},
         {"plane": "Convair CV-340", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
         {"plane": "Convair CV-340", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
         {"plane": "Convair CV-340", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
         {"plane": "Convair CV-340", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
-        {"plane": "Convair CV-340", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"},
+        {"plane": "Convair CV-340", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"}
+      ]
+    },
+    {
+      "name": "Douglas DC-3",
+      "section": "Aircraft",
+      "family": "Classics and propliners",
+      "features": [
+        {"plane": "Douglas DC-3", "name": "In the game: 3D model and liveries", "web": "done", "fly": "done", "rust": "done"},
+        {"plane": "Douglas DC-3", "name": "Fly it yourself", "web": "na", "fly": "done", "rust": "done"},
+        {"plane": "Douglas DC-3", "name": "Realistic 3D cockpit", "web": "na", "fly": "no", "rust": "done"},
+        {"plane": "Douglas DC-3", "name": "Working buttons and systems", "web": "na", "fly": "no", "rust": "unknown"},
+        {"plane": "Douglas DC-3", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "done", "rust": "no"}
+      ]
+    },
+    {
+      "name": "Douglas DC-4",
+      "section": "Aircraft",
+      "family": "Classics and propliners",
+      "features": [
+        {"plane": "Douglas DC-4", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "Douglas DC-4", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "Douglas DC-4", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
+        {"plane": "Douglas DC-4", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
+        {"plane": "Douglas DC-4", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"}
+      ]
+    },
+    {
+      "name": "Douglas DC-6B",
+      "section": "Aircraft",
+      "family": "Classics and propliners",
+      "features": [
         {"plane": "Douglas DC-6B", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
         {"plane": "Douglas DC-6B", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
         {"plane": "Douglas DC-6B", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
         {"plane": "Douglas DC-6B", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
-        {"plane": "Douglas DC-6B", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"},
-        {"plane": "Lockheed L-1049G Super Constellation", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "Lockheed L-1049G Super Constellation", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "Lockheed L-1049G Super Constellation", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
-        {"plane": "Lockheed L-1049G Super Constellation", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
-        {"plane": "Lockheed L-1049G Super Constellation", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"},
+        {"plane": "Douglas DC-6B", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"}
+      ]
+    },
+    {
+      "name": "Douglas DC-7C Seven Seas",
+      "section": "Aircraft",
+      "family": "Classics and propliners",
+      "features": [
         {"plane": "Douglas DC-7C Seven Seas", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
         {"plane": "Douglas DC-7C Seven Seas", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
         {"plane": "Douglas DC-7C Seven Seas", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
@@ -622,31 +1288,126 @@
       ]
     },
     {
-      "name": "Other jets",
+      "name": "Junkers Ju 52/3m",
       "section": "Aircraft",
+      "family": "Classics and propliners",
+      "features": [
+        {"plane": "Junkers Ju 52/3m", "name": "In the game: 3D model and liveries", "web": "done", "fly": "done", "rust": "done"},
+        {"plane": "Junkers Ju 52/3m", "name": "Fly it yourself", "web": "na", "fly": "done", "rust": "done"},
+        {"plane": "Junkers Ju 52/3m", "name": "Realistic 3D cockpit", "web": "na", "fly": "no", "rust": "done"},
+        {"plane": "Junkers Ju 52/3m", "name": "Working buttons and systems", "web": "na", "fly": "no", "rust": "unknown"},
+        {"plane": "Junkers Ju 52/3m", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "done", "rust": "no"}
+      ]
+    },
+    {
+      "name": "Lockheed L-1049G Super Constellation",
+      "section": "Aircraft",
+      "family": "Classics and propliners",
+      "features": [
+        {"plane": "Lockheed L-1049G Super Constellation", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "Lockheed L-1049G Super Constellation", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "Lockheed L-1049G Super Constellation", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
+        {"plane": "Lockheed L-1049G Super Constellation", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
+        {"plane": "Lockheed L-1049G Super Constellation", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"}
+      ]
+    },
+    {
+      "name": "COMAC C919",
+      "section": "Aircraft",
+      "family": "Other jets",
       "features": [
         {"plane": "COMAC C919", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "COMAC C919", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "Tupolev Tu-104A", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "Tupolev Tu-104A", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "de Havilland Comet 4", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "de Havilland Comet 4", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "Sud Aviation Caravelle III", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "Sud Aviation Caravelle III", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "COMAC C919", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
+      ]
+    },
+    {
+      "name": "Convair 880",
+      "section": "Aircraft",
+      "family": "Other jets",
+      "features": [
         {"plane": "Convair 880", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "Convair 880", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "Vickers VC10", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "Vickers VC10", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "Convair 880", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
+      ]
+    },
+    {
+      "name": "de Havilland Comet 4",
+      "section": "Aircraft",
+      "family": "Other jets",
+      "features": [
+        {"plane": "de Havilland Comet 4", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "de Havilland Comet 4", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
+      ]
+    },
+    {
+      "name": "Hawker Siddeley Trident 1C",
+      "section": "Aircraft",
+      "family": "Other jets",
+      "features": [
         {"plane": "Hawker Siddeley Trident 1C", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "Hawker Siddeley Trident 1C", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "Hawker Siddeley Trident 1C", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
+      ]
+    },
+    {
+      "name": "Ilyushin Il-62",
+      "section": "Aircraft",
+      "family": "Other jets",
+      "features": [
         {"plane": "Ilyushin Il-62", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "Ilyushin Il-62", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "Tupolev Tu-154", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "Tupolev Tu-154", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
-        {"plane": "Lockheed L-1011 TriStar", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "Lockheed L-1011 TriStar", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "Ilyushin Il-62", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
+      ]
+    },
+    {
+      "name": "Ilyushin Il-86",
+      "section": "Aircraft",
+      "family": "Other jets",
+      "features": [
         {"plane": "Ilyushin Il-86", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
         {"plane": "Ilyushin Il-86", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
+      ]
+    },
+    {
+      "name": "Lockheed L-1011 TriStar",
+      "section": "Aircraft",
+      "family": "Other jets",
+      "features": [
+        {"plane": "Lockheed L-1011 TriStar", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "Lockheed L-1011 TriStar", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
+      ]
+    },
+    {
+      "name": "Sud Aviation Caravelle III",
+      "section": "Aircraft",
+      "family": "Other jets",
+      "features": [
+        {"plane": "Sud Aviation Caravelle III", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "Sud Aviation Caravelle III", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
+      ]
+    },
+    {
+      "name": "Tupolev Tu-104A",
+      "section": "Aircraft",
+      "family": "Other jets",
+      "features": [
+        {"plane": "Tupolev Tu-104A", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "Tupolev Tu-104A", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
+      ]
+    },
+    {
+      "name": "Tupolev Tu-154",
+      "section": "Aircraft",
+      "family": "Other jets",
+      "features": [
+        {"plane": "Tupolev Tu-154", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "Tupolev Tu-154", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
+      ]
+    },
+    {
+      "name": "Vickers VC10",
+      "section": "Aircraft",
+      "family": "Other jets",
+      "features": [
+        {"plane": "Vickers VC10", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
+        {"plane": "Vickers VC10", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"}
       ]
     }
   ]
