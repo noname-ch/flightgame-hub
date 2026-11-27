@@ -37,7 +37,7 @@
         {"name": "Real airport layouts from OpenStreetMap", "web": "done", "fly": "done", "rust": "done"},
         {"name": "Water: seas, lakes, rivers", "web": "done", "fly": "done", "rust": "done"},
         {"name": "Volumetric clouds, weather systems, lightning", "web": "no", "fly": "no", "rust": "done"},
-        {"name": "Approach, runway and PAPI lights from far", "web": "done", "fly": "done", "rust": "no"},
+        {"name": "Approach, runway and PAPI lights from far", "web": "done", "fly": "done", "rust": "doing", "who": {"rust": "Claude"}},
         {"name": "Moving parts: flaps, control surfaces, reversers, wing bending", "web": "done", "fly": "done", "rust": "done"},
         {"name": "Spinning props, blurred prop discs", "web": "done", "fly": "done", "rust": "done"}
       ]
@@ -123,7 +123,7 @@
         {"plane": "A320ceo", "name": "Fly it yourself", "web": "na", "fly": "done", "rust": "done"},
         {"plane": "A320ceo", "name": "Realistic 3D cockpit", "web": "na", "fly": "done", "rust": "done"},
         {"plane": "A320ceo", "name": "Working buttons and systems", "web": "na", "fly": "done", "rust": "done"},
-        {"plane": "A320ceo", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "done", "rust": "no"}
+        {"plane": "A320ceo", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "done", "rust": "doing", "who": {"rust": "Claude"}}
       ]
     },
     {
