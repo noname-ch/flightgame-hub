@@ -72,7 +72,8 @@
         {"name": "Radios: ATIS, tower calls, transponder, TCAS", "web": "na", "fly": "done", "rust": "done"},
         {"name": "Panels as modules you can move or copy to other planes", "web": "na", "fly": "done", "rust": "done"},
         {"name": "Fly on a phone: touch controls (thrust lever, stick or tilt, buttons)", "web": "na", "fly": "done", "rust": "na"},
-        {"name": "Autopilot numbers on the 3D FCU (speed, heading, altitude, V/S) in the A320, A330 and A340", "web": "na", "fly": "done", "rust": "doing"}
+        {"name": "Autopilot numbers on the 3D FCU (speed, heading, altitude, V/S) in the A320, A330 and A340", "web": "na", "fly": "done", "rust": "doing"},
+        {"name": "Stalls by the physics: the lift breaks away and it falls, nose and wing drop by themselves", "web": "na", "fly": "doing", "rust": "doing"}
       ]
     },
     {
