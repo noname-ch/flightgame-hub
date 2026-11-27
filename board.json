@@ -599,7 +599,7 @@
       "family": "Boeing 777 / 787",
       "features": [
         {"plane": "787-8", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "787-8", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "787-8", "name": "Fly it yourself", "web": "na", "fly": "doing", "rust": "no"},
         {"plane": "787-8", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
         {"plane": "787-8", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
         {"plane": "787-8", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"}
@@ -611,7 +611,7 @@
       "family": "Boeing 777 / 787",
       "features": [
         {"plane": "787-9", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "787-9", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "787-9", "name": "Fly it yourself", "web": "na", "fly": "doing", "rust": "no"},
         {"plane": "787-9", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
         {"plane": "787-9", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
         {"plane": "787-9", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"}
@@ -623,7 +623,7 @@
       "family": "Boeing 777 / 787",
       "features": [
         {"plane": "787-10", "name": "In the game: 3D model and liveries", "web": "done", "fly": "na", "rust": "done"},
-        {"plane": "787-10", "name": "Fly it yourself", "web": "na", "fly": "no", "rust": "no"},
+        {"plane": "787-10", "name": "Fly it yourself", "web": "na", "fly": "doing", "rust": "no"},
         {"plane": "787-10", "name": "Realistic 3D cockpit", "web": "na", "fly": "na", "rust": "done"},
         {"plane": "787-10", "name": "Working buttons and systems", "web": "na", "fly": "na", "rust": "unknown"},
         {"plane": "787-10", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "na", "rust": "na"}
