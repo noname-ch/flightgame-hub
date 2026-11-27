@@ -42,7 +42,9 @@
         {"name": "Moving parts: flaps, control surfaces, reversers, wing bending", "web": "done", "fly": "done", "rust": "done"},
         {"name": "Spinning props, blurred prop discs", "web": "done", "fly": "done", "rust": "done"},
         {"name": "Prepare scenery: pick an area to load ahead, sharp and ready when you fly there", "web": "na", "fly": "done", "rust": "done"},
-        {"name": "Aircraft position lights, beacons, strobes, landing lights (wing tip lights bend with the wing)", "web": "done", "fly": "done", "rust": "done"}
+        {"name": "Aircraft position lights, beacons, strobes, landing lights (wing tip lights bend with the wing)", "web": "done", "fly": "done", "rust": "done"},
+        {"name": "Buildings in every town and city", "web": "done", "fly": "unknown", "rust": "doing"},
+        {"name": "Forests with trees", "web": "no", "fly": "no", "rust": "doing"}
       ]
     },
     {
