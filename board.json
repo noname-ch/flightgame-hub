@@ -25,7 +25,7 @@
         {"name": "Multiplayer rooms", "web": "done", "fly": "na", "rust": "done"},
         {"name": "Loans", "web": "no", "fly": "na", "rust": "no", "note": "ROADMAP"},
         {"name": "Profit table per route", "web": "no", "fly": "na", "rust": "no", "note": "ROADMAP"},
-        {"name": "Real-world weather: real climate and seasons, fronts, hurricanes, live weather", "web": "doing", "fly": "no", "rust": "doing"}
+        {"name": "Real-world weather: real climate and seasons, fronts, hurricanes, live weather", "web": "done", "fly": "no", "rust": "done"}
       ]
     },
     {
