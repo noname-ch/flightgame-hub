@@ -123,7 +123,7 @@
         {"plane": "A320ceo", "name": "Fly it yourself", "web": "na", "fly": "done", "rust": "done"},
         {"plane": "A320ceo", "name": "Realistic 3D cockpit", "web": "na", "fly": "done", "rust": "done"},
         {"plane": "A320ceo", "name": "Working buttons and systems", "web": "na", "fly": "done", "rust": "done"},
-        {"plane": "A320ceo", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "done", "rust": "doing", "who": {"rust": "Claude"}}
+        {"plane": "A320ceo", "name": "Cockpit sounds: GPWS, callouts, warnings", "web": "na", "fly": "done", "rust": "done", "who": {"rust": "Claude"}}
       ]
     },
     {
