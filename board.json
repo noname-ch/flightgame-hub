@@ -39,7 +39,8 @@
         {"name": "Volumetric clouds, weather systems, lightning", "web": "no", "fly": "no", "rust": "done"},
         {"name": "Approach, runway and PAPI lights from far", "web": "done", "fly": "done", "rust": "done", "who": {"rust": "Claude"}},
         {"name": "Moving parts: flaps, control surfaces, reversers, wing bending", "web": "done", "fly": "done", "rust": "done"},
-        {"name": "Spinning props, blurred prop discs", "web": "done", "fly": "done", "rust": "done"}
+        {"name": "Spinning props, blurred prop discs", "web": "done", "fly": "done", "rust": "done"},
+        {"name": "Prepare scenery: pick an area to load ahead, sharp and ready when you fly there", "web": "na", "fly": "doing", "rust": "doing"}
       ]
     },
     {
