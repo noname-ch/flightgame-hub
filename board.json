@@ -48,7 +48,8 @@
         {"name": "Cheap cloud style (Puffs)", "web": "no", "fly": "no", "rust": "done"},
         {"name": "Rain and snow drops on the windscreen and camera", "web": "no", "fly": "no", "rust": "doing"},
         {"name": "Clouds drift with the local wind", "web": "no", "fly": "no", "rust": "doing"},
-        {"name": "Steady clouds (no wobble or grain)", "web": "na", "fly": "na", "rust": "doing"}
+        {"name": "Steady clouds (no wobble or grain)", "web": "na", "fly": "na", "rust": "doing"},
+        {"name": "Dark solid window glass, cabin windows on every model", "web": "done", "fly": "done", "rust": "no"}
       ]
     },
     {
@@ -80,7 +81,8 @@
       "features": [
         {"name": "Breakable parts: wingtips, wings, elevators, tumbling", "web": "done", "fly": "done", "rust": "done"},
         {"name": "Wing strikes, fuselage break-up, fireballs, debris", "web": "done", "fly": "done", "rust": "done"},
-        {"name": "Fire trails, burning pieces, Concorde reheat", "web": "done", "fly": "done", "rust": "done"}
+        {"name": "Fire trails, burning pieces, Concorde reheat", "web": "done", "fly": "done", "rust": "done"},
+        {"name": "Fuselage breaks in up to five sections (behind the cockpit, ahead of the tail)", "web": "done", "fly": "done", "rust": "no"}
       ]
     },
     {
