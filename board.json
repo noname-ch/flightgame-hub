@@ -45,7 +45,10 @@
         {"name": "Aircraft position lights, beacons, strobes, landing lights (wing tip lights bend with the wing)", "web": "done", "fly": "done", "rust": "done"},
         {"name": "Buildings in every town and city", "web": "done", "fly": "unknown", "rust": "done"},
         {"name": "Forests with trees", "web": "no", "fly": "no", "rust": "done"},
-        {"name": "Cheap cloud style (Puffs)", "web": "no", "fly": "no", "rust": "done"}
+        {"name": "Cheap cloud style (Puffs)", "web": "no", "fly": "no", "rust": "done"},
+        {"name": "Rain and snow drops on the windscreen and camera", "web": "no", "fly": "no", "rust": "doing"},
+        {"name": "Clouds drift with the local wind", "web": "no", "fly": "no", "rust": "doing"},
+        {"name": "Steady clouds (no wobble or grain)", "web": "na", "fly": "na", "rust": "doing"}
       ]
     },
     {
