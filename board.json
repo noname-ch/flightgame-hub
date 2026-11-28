@@ -77,7 +77,7 @@
         {"name": "ND mode/range knobs and VOR/ADF arrow switches on the 3D EFIS panel (A320, A330, A340)", "web": "na", "fly": "done", "rust": "done"},
         {"name": "ND airport map at ZOOM in real OANS colours, TERR ON ND switch, each pilot's own EFIS (A320, A330, A340 and the others)", "web": "na", "fly": "done", "rust": "done"},
         {"name": "A350 cockpit: the A320's 3D FCU, EFIS and MCDUs; a map with its own settings on the side screens", "web": "na", "fly": "done", "rust": "no"},
-        {"name": "A350 cockpit: walls, seats and consoles from a free 3D model, coloured", "web": "na", "fly": "doing", "rust": "no"}
+        {"name": "A350 cockpit: walls, seats and consoles from a free 3D model, coloured", "web": "na", "fly": "done", "rust": "no"}
       ]
     },
     {
